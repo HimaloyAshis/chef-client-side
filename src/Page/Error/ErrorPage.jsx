@@ -4,7 +4,7 @@ import { FaBeer, FaFrown } from 'react-icons/fa';
 
 const ErrorPage = () => {
     const { error, status } = useRouteError()
-    console.log('error', error.message, status)
+    // console.log('error', error.message, status)
     return (
         <div>
             <div className='text-yellow-400 flex flex-col justify-center items-center'>
