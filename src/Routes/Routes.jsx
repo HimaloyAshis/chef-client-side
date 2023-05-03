@@ -6,6 +6,7 @@ import LoginLayOut from "../LayOut/LoginLayOut";
 import Login from "../Page/Login/Login";
 import Register from "../Page/Register/Register";
 import RecipesDetails from "../Page/RecipesDetails/RecipesDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'recipesDetail/:id',
-                element:<RecipesDetails></RecipesDetails>,
+                element:<PrivateRoutes><RecipesDetails></RecipesDetails></PrivateRoutes>,
                 loader: ({params})=>fetch(`https://chef-auth-server-himlaoy.vercel.app/recipesDetail/${params.id}`),
             }
         ]
