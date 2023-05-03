@@ -5,6 +5,7 @@ import Home from "../Page/Home/Home";
 import LoginLayOut from "../LayOut/LoginLayOut";
 import Login from "../Page/Login/Login";
 import Register from "../Page/Register/Register";
+import RecipesDetails from "../Page/RecipesDetails/RecipesDetails";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +19,8 @@ const router = createBrowserRouter([
                 loader:()=>fetch('http://localhost:5000/'),
             },
             {
-
+                path:'recipesDetail/:id',
+                element:<RecipesDetails></RecipesDetails>
             }
         ]
     },
