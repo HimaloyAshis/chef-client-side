@@ -7,9 +7,9 @@ import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from
 import app from '../../Firebase/firebase.config';
 
 
-const auth = getAuth(app)
 const Login = () => {
-
+    
+    const auth = getAuth(app)
     const { logIn } = useContext(AuthContext)
 
     const GoogleProvider = new GoogleAuthProvider()
@@ -63,7 +63,7 @@ const Login = () => {
 
         <div className='log py-10 px-10'>
             <div className='w-72 mx-auto  '>
-                <h2 className='text-center mt-5 text-2xl'>Please Login</h2>
+                <h2 className='text-center mt-5 text-2xl font-bold mb-3'>Please Login</h2>
                 <form onSubmit={handleLogIn}>
                     <div className="mb-6">
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
@@ -79,7 +79,7 @@ const Login = () => {
                         </div>
                         <label className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
                     </div>
-                    <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                    <button type="submit" className="text-white bg-orange-500 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-600">Submit</button>
 
                 </form>
                 <h2 className='mb-3'>Don't have an account? Please <Link to="/register" className='text-orange-500 inline-flex'>Register</Link></h2>
