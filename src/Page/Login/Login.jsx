@@ -1,13 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Login.css'
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+
+    const {logIn} = useContext()
+
+
+
+    const handleLogIn =(event)=>{
+        event.preventDefault()
+
+        const form = event.target
+        const email = form.email.value
+        const password = form.password.value
+
+        console.log(email,password)
+
+
+
+
+    }
+
+
     return (
 
         <div className='w-72 mx-auto mt-3 mb-5'>
             <h2 className='text-center mt-5 text-2xl'>Please Login</h2>
-            <form >
+            <form onSubmit={handleLogIn}>
                 <div className="mb-6">
                     <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                     <input type="email" id="email" name='email' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required />
