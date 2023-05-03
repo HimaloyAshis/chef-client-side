@@ -1,19 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     return (
         <div className=''>
             <div className="navbar bg-amber-200">
                 <div className="flex-1">
-                    <h2 className=" btn-ghost normal-case text-2xl font-extrabold"><i>Toothsome Space</i></h2>
+                    <h2 className="  text-2xl font-extrabold"><i>Toothsome Space</i></h2>
                 </div>
-                <div className="flex-none">
-                    <ul className="menu menu-horizontal px-1">
+                <div className="">
+                    <ul className="flex gap-2 px-1">
                         <li>
-                            <Link>Home</Link>
-                            <Link>Blog</Link>
-                            <Link to="/login">Login</Link>
+                            <NavLink to={`/`} className={({isActive})=>isActive? 'active' : 'default'} >
+                                Home
+                            </NavLink>                           
+                        </li>
+                        <li>
+                            <NavLink to={`/`} className={({isActive})=>isActive? 'active' : 'default'}>
+                                Blog
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/login" className={({isActive})=>isActive? 'active' : 'default'}>
+                                Login
+                            </NavLink>
                         </li>
                     </ul>
                 </div>
