@@ -9,7 +9,7 @@ const Home = () => {
     const { chefName, chefPicture, id, numberOfRecipes, yearsOfExperience } = chefs
     console.log(chefs)
     return (
-        <section>
+        <section className='bgc'>
             {/* banner section */}
             <section className='bg'>
                 <div className='flex justify-center items-center'>
@@ -56,9 +56,9 @@ const Home = () => {
                     <button className="btn btn-outline btn-success"> <FaInstagram></FaInstagram > Follow us on Instagram</button>
                 </div>
             </section>
-            <section className='mt-10 mx-12 mb-10'>
+            <section className='mt-10 mx-12 pb-10'>
                 <h1 className='text-4xl font-extrabold'>Toothsome Space</h1>
-                <p className='mt-8 tex-xl'>Toothsome Space, a restaurant in the Xuhui district that offers a playful and sophisticated ambiance, fusion cuisine, and creative desserts that are sure to satisfy your sweet tooth.
+                <p className='mt-8 tex-xl text-gray-300'>Toothsome Space, a restaurant in the Xuhui district that offers a playful and sophisticated ambiance, fusion cuisine, and creative desserts that are sure to satisfy your sweet tooth.
 
                     From the moment you walk through the doors of Toothsome Space, you'll feel like you've entered a different world. The whimsical illustrations on the walls and the oversized teeth on the ceiling create a fun and welcoming atmosphere that's perfect for all ages. It's clear that the restaurant's owners have paid attention to every detail, from the decor to the plating of the dishes.
 
