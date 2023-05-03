@@ -56,7 +56,7 @@ const Home = () => {
                     <button className="btn btn-outline btn-success"> <FaInstagram></FaInstagram > Follow us on Instagram</button>
                 </div>
             </section>
-            <section className='mt-10 mx-12'>
+            <section className='mt-10 mx-12 mb-10'>
                 <h1 className='text-4xl font-extrabold'>Toothsome Space</h1>
                 <p className='mt-8 tex-xl'>Toothsome Space, a restaurant in the Xuhui district that offers a playful and sophisticated ambiance, fusion cuisine, and creative desserts that are sure to satisfy your sweet tooth.
 

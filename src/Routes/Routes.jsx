@@ -16,12 +16,12 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader:()=>fetch('http://localhost:5000/'),
+                loader:()=>fetch('https://chef-auth-server-himlaoy.vercel.app/'),
             },
             {
                 path:'recipesDetail/:id',
                 element:<RecipesDetails></RecipesDetails>,
-                loader: ({params})=>fetch(`http://localhost:5000/recipesDetail/${params.id}`),
+                loader: ({params})=>fetch(`https://chef-auth-server-himlaoy.vercel.app/recipesDetail/${params.id}`),
             }
         ]
     },
