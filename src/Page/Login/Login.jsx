@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css'
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
@@ -11,6 +11,7 @@ const Login = () => {
     
     const auth = getAuth(app)
     const { logIn } = useContext(AuthContext)
+    const [error, setError] = useState()
 
     const GoogleProvider = new GoogleAuthProvider()
     const GithubProvider = new GithubAuthProvider()
@@ -37,7 +38,7 @@ const Login = () => {
                 form.reset()
                 navigate(goto,{replace: true})
             })
-            .catch(error => console.log(error.message))
+            .catch(error =>setError(error.message))
 
  }   
 
@@ -98,6 +99,7 @@ const Login = () => {
                         <FaGithub className='inline-flex'></FaGithub> Login with Github
                     </span>
                 </button>
+                <p className='mt-2 text-orange-500'>{error}</p>
             </div>
         </div>
 

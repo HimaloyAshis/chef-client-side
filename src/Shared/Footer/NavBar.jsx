@@ -32,12 +32,12 @@ const NavBar = () => {
                             </NavLink>
                         </li>
                         <li className='inline-flex gap-2'>
-                            {user? <><img className='rounded-full h-5 w-5' src={user?.photoURL}  alt="Author" /> <button onClick={outToLog}>LogOut</button></> : <NavLink to="/login" className={({isActive})=>isActive? 'active' : 'default'}>
+                            {user? <><img className='rounded-full h-8 w-8' src={user?.photoURL}  alt="Author" /> <button onClick={outToLog}>LogOut</button></> : <NavLink to="/login" className={({isActive})=>isActive? 'active' : 'default'}>
                                 Login
                             </NavLink>}
                         </li>
                         <li>
-
+                            
                         </li>
                     </ul>
                 </div>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Register.css'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
@@ -6,6 +6,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 const Register = () => {
 
     const { createUser, updateUser } = useContext(AuthContext)
+    const [error, setError] = useState()
 
 
     const handleRegister = (event) => {
@@ -18,6 +19,11 @@ const Register = () => {
         const password = form.password.value
         // console.log(name, email, password)
 
+        if(password.length < 6 ){
+            setError('please put at least six password')
+            return 
+        }
+
         // create User
         createUser(email, password)
             .then(result => {
@@ -29,12 +35,6 @@ const Register = () => {
                 form.reset()
             })
             .catch(error => console.log(error.message))
-
-
-
-        // update Profile
-
-
 
 
     }
@@ -66,6 +66,7 @@ const Register = () => {
 
                 </form>
                 <h2>Already have an account? Please <Link to="/login" className='text-orange-500'>Login</Link></h2>
+                <p className='mt-2 text-orange-500'>{error}</p>
             </div>
         </div>
     );
