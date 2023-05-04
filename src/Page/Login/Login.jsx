@@ -16,12 +16,12 @@ const Login = () => {
     const GithubProvider = new GithubAuthProvider()
 
 
+    const location = useLocation()
+    console.log(location)
 
     const handleLogIn = (event) => {
 
         event.preventDefault()
-        const location = useLocation()
-        console.log(location)
 
         const form = event.target
         const email = form.email.value

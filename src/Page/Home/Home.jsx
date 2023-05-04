@@ -52,7 +52,7 @@ const Home = () => {
 
                                     <div className='flex justify-between items-center'>
                                         <button className='bton'><Link to={`/recipesDetail/${chef.id}`}>View Recipes</Link></button>
-                                        <button onClick={likeButton}>{like ?  <FaThumbsUp></FaThumbsUp> : <FaRegThumbsUp></FaRegThumbsUp>}</button>
+                                        <button onClick={likeButton}>{like ?  <FaThumbsUp className='h-8 w-8'></FaThumbsUp> : <FaRegThumbsUp className='h-8 w-8'></FaRegThumbsUp>}</button>
                                     </div>
                                 </div>
                             </div>

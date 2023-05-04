@@ -1,16 +1,20 @@
 import React from 'react';
 import './RecipesDetails.css'
 import { useLoaderData, useParams } from 'react-router-dom';
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { FaHeart, FaRegHeart, FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa';
 import { useState } from 'react';
 
 const RecipesDetails = () => {
     const [favour, setFavour] = useState(false)
+    const [like, setLike] = useState(false)
 
     const chefDetails = useLoaderData()
     const { recipes } = chefDetails
     console.log(chefDetails)
 
+    const likeButton = ()=>{
+        setLike(true)
+    }
 
     const favorite = () => {
         setFavour(true)
@@ -31,7 +35,7 @@ const RecipesDetails = () => {
                         <p>Recipes: {chefDetails.numberOfRecipes}</p>
 
                         <div className='flex justify-between items-center'>
-
+                            <button onClick={likeButton}>{like ? <FaThumbsUp className='h-8 w-8'></FaThumbsUp> : <FaRegThumbsUp className='h-8 w-8'></FaRegThumbsUp>}</button>
 
                         </div>
                     </div>
@@ -51,7 +55,7 @@ const RecipesDetails = () => {
                                     <p><span className='text-xl'>Cooking method :</span> {recipe.cookingMethod}</p>
                                     <p><span className='text-xl'>Rating :</span>{recipe.rating}</p>
                                     <div className="card-actions justify-end">
-                                        <button onClick={favorite}>{favour ? <FaHeart className='h-10 w-10  text-red-500'></FaHeart> : <FaRegHeart className='h-10 w-10 text-red-500'></FaRegHeart>}</button>
+                                        <button onClick={favorite}>{favour ? <FaHeart className='h-8 w-8  text-red-500'></FaHeart> : <FaRegHeart className='h-8 w-8 text-red-500'></FaRegHeart>}</button>
                                     </div>
                                 </div>
                             </div>)
