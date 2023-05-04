@@ -2,11 +2,11 @@
 
 ### Here is my live website link : https://chef-authentication.web.app/
 
-### Here is my private github client side link : 
+### Here is private github client side link : https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-client-side-Himlaoy
 
-### Here is my private github server side link :
+### Here is private github server side link :https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-server-side-Himlaoy
 
-### My vercel server side link :
+### vercel server side link : https://chef-auth-server-himlaoy.vercel.app/
 
 
 ## My website 
