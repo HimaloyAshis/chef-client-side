@@ -1,6 +1,6 @@
-import { Rating } from '@smastrom/react-rating';
+// import { Rating } from '@smastrom/react-rating';
 import React, { useState } from 'react';
-import { FaCheckCircle, FaCircle, FaHeart, FaRegHeart, FaRegStar, FaStar } from 'react-icons/fa';
+import { FaCircle, FaHeart, FaRegHeart,} from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import ReactStars from "react-rating-stars-component";
@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const ThreeRecipes = ({ recipe }) => {
     const [favour, setFavour] = useState(false)
-    const [rating, setRating] = useState(0)
+    
    
     const favorite = () => {
         setFavour(true)
@@ -16,9 +16,9 @@ const ThreeRecipes = ({ recipe }) => {
 
     }
 
-    const changeIt = () =>{
+  
 
-    }
+    
 
     return (
         <div key={recipe.name} className="card w-96 mt-10 m-10 bg-base-100 shadow-xl">
