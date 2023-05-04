@@ -4,7 +4,14 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const NavBar = () => {
 
-    const {user} = useContext(AuthContext)
+    const {user, logOut} = useContext(AuthContext)
+
+    const outToLog= ()=>{
+        logOut()
+        .then()
+        .catch(error=>console.log(error.message))
+        
+    }
 
     return (
         <div className=''>
@@ -25,7 +32,7 @@ const NavBar = () => {
                             </NavLink>
                         </li>
                         <li>
-                            {user? <img className='rounded-full' src={user?.picture}  alt="" /> : <NavLink to="/login" className={({isActive})=>isActive? 'active' : 'default'}>
+                            {user? <><img className='rounded-full' src={user?.picture}  alt="" /> <button onClick={outToLog}>LogOut</button></> : <NavLink to="/login" className={({isActive})=>isActive? 'active' : 'default'}>
                                 Login
                             </NavLink>}
                         </li>

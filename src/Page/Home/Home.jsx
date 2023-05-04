@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaRegThumbsUp, FaThumbsUp } from "react-icons/fa";
 import { Link, useLoaderData } from 'react-router-dom';
 
 
 const Home = () => {
+
+    const [like, setLike] = useState(false)
+
+
     const chefs = useLoaderData()
     const { chefName, chefPicture, id, numberOfRecipes, yearsOfExperience } = chefs
-    console.log(chefs)
+    // console.log(chefs)
+
+
+    const likeButton = ()=>{
+        setLike(true)
+    }
+
     return (
         <section className='bgc'>
             {/* banner section */}
@@ -42,7 +52,7 @@ const Home = () => {
 
                                     <div className='flex justify-between items-center'>
                                         <button className='bton'><Link to={`/recipesDetail/${chef.id}`}>View Recipes</Link></button>
-                                        <button>like</button>
+                                        <button onClick={likeButton}>{like ?  <FaThumbsUp></FaThumbsUp> : <FaRegThumbsUp></FaRegThumbsUp>}</button>
                                     </div>
                                 </div>
                             </div>
@@ -56,6 +66,8 @@ const Home = () => {
                     <button className="btn btn-outline btn-success"> <FaInstagram></FaInstagram > Follow us on Instagram</button>
                 </div>
             </section>
+
+            {/* blog section */}
             <section className='mt-10 mx-12 pb-10'>
                 <h1 className='text-4xl font-extrabold'>Toothsome Space</h1>
                 <p className='mt-8 tex-xl text-gray-300'>Toothsome Space, a restaurant in the Xuhui district that offers a playful and sophisticated ambiance, fusion cuisine, and creative desserts that are sure to satisfy your sweet tooth.

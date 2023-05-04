@@ -1,11 +1,21 @@
 import React from 'react';
 import './RecipesDetails.css'
 import { useLoaderData, useParams } from 'react-router-dom';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { useState } from 'react';
 
 const RecipesDetails = () => {
+    const [favour, setFavour] = useState(false)
+
     const chefDetails = useLoaderData()
     const { recipes } = chefDetails
     console.log(chefDetails)
+
+
+    const favorite = () => {
+        setFavour(true)
+    }
+
     return (
         <section>
             <div className='chefBackground mb-10 mt-10'>
@@ -22,7 +32,7 @@ const RecipesDetails = () => {
 
                         <div className='flex justify-between items-center'>
 
-                            <button>like</button>
+
                         </div>
                     </div>
                 </div>
@@ -30,21 +40,21 @@ const RecipesDetails = () => {
             <section className='chefBackground'>
                 <div className='grid sm:grid-cols-1 lg:grid-cols-3'>
                     {
-                        recipes.map(recipe => 
-                        <div key={recipe.name} className="card w-96 mt-10 m-10 bg-base-100 shadow-xl">
-                            <div className=" card-body">
-                                <h2 className="card-title text-xl font-bold">{recipe.recipeName}</h2>
-                                <h2 className='text-xl font-bold'>ingredients</h2>
-                                {
-                                    recipe.ingredients.map(ingrd=><p>{ingrd[ingrd]}. {ingrd}</p> )
-                                }
-                                <p><span className='text-xl'>Cooking method :</span> {recipe.cookingMethod}</p>
-                                <p><span className='text-xl'>Rating :</span>{recipe.rating}</p>
-                                <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Buy Now</button>
+                        recipes.map(recipe =>
+                            <div key={recipe.name} className="card w-96 mt-10 m-10 bg-base-100 shadow-xl">
+                                <div className=" card-body">
+                                    <h2 className="card-title text-xl font-bold">{recipe.recipeName}</h2>
+                                    <h2 className='text-xl font-bold'>ingredients</h2>
+                                    {
+                                        recipe.ingredients.map(ingrd => <p>{ingrd[ingrd]}. {ingrd}</p>)
+                                    }
+                                    <p><span className='text-xl'>Cooking method :</span> {recipe.cookingMethod}</p>
+                                    <p><span className='text-xl'>Rating :</span>{recipe.rating}</p>
+                                    <div className="card-actions justify-end">
+                                        <button onClick={favorite}>{favour ? <FaHeart className='h-10 w-10  text-red-500'></FaHeart> : <FaRegHeart className='h-10 w-10 text-red-500'></FaRegHeart>}</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>)
+                            </div>)
                     }
                 </div>
 

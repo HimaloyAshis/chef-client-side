@@ -18,6 +18,7 @@ const Login = () => {
 
 
     const handleLogIn = (event) => {
+
         event.preventDefault()
         const location = useLocation()
         console.log(location)
@@ -26,7 +27,7 @@ const Login = () => {
         const email = form.email.value
         const password = form.password.value
 
-        console.log(email, password)
+        // console.log(email, password)
 
         logIn(email, password)
             .then(result => {
@@ -36,7 +37,7 @@ const Login = () => {
             })
             .catch(error => console.log(error.message))
 
-    }
+ }   
 
     const GoogleLog = () => {
         signInWithPopup(auth, GoogleProvider)
@@ -57,7 +58,7 @@ const Login = () => {
 
     }
 
-
+ 
 
     return (
 

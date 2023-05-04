@@ -5,7 +5,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
 
-    const { createUser, updateUser } = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext)
 
 
     const handleRegister = (event) => {
@@ -23,6 +23,7 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser)
+                form.reset()
             })
             .catch(error => console.log(error.message))
 
