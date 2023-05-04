@@ -7,6 +7,7 @@ import Login from "../Page/Login/Login";
 import Register from "../Page/Register/Register";
 import RecipesDetails from "../Page/RecipesDetails/RecipesDetails";
 import PrivateRoutes from "./PrivateRoutes";
+import Blog from "../Page/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
                 path:'recipesDetail/:id',
                 element:<PrivateRoutes><RecipesDetails></RecipesDetails></PrivateRoutes>,
                 loader: ({params})=>fetch(`https://chef-auth-server-himlaoy.vercel.app/recipesDetail/${params.id}`),
+            },
+            {
+                path:'blog',
+                element:<Blog></Blog>
             }
         ]
     },
@@ -38,7 +43,8 @@ const router = createBrowserRouter([
             {
                 path:'register',
                 element:<Register></Register>,
-            }
+            },
+            
         ]
     }
 ])

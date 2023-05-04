@@ -16,7 +16,8 @@ const RecipesDetails = () => {
         setLike(true)
     }
 
-    const favorite = () => {
+    const favorite = (id) => {
+        const fav = recipes.recipe.find(rce=>recipes.id === id)
         setFavour(true)
     }
 
@@ -55,7 +56,7 @@ const RecipesDetails = () => {
                                     <p><span className='text-xl'>Cooking method :</span> {recipe.cookingMethod}</p>
                                     <p><span className='text-xl'>Rating :</span>{recipe.rating}</p>
                                     <div className="card-actions justify-end">
-                                        <button onClick={()=>favorite()}>{favour ? <FaHeart className='h-8 w-8  text-red-500'></FaHeart> : <FaRegHeart className='h-8 w-8 text-red-500'></FaRegHeart>}</button>
+                                        <button onClick={()=>favorite(recipe.id)}>{favour ? <FaHeart className='h-8 w-8  text-red-500'></FaHeart> : <FaRegHeart className='h-8 w-8 text-red-500'></FaRegHeart>}</button>
                                     </div>
                                 </div>
                             </div>)

@@ -1,4 +1,4 @@
-# This is a one of the most popular restaurant called Toothsome Space website which situated at shanghai in china.
+# This is a one of the most popular restaurant website I have made called Toothsome Space which is situated at shanghai in china.
 
 ### Here is my live website link : https://chef-authentication.web.app/
 
@@ -11,7 +11,7 @@
 
 ## My website 
 
-#### Here in my website I use some frameWork named :
+### Here in my website I use some frameWork named :
 #### The website made in Reactjs.
 #### The css frameworks are Tailwind css, flowbite and daisyui.
 
