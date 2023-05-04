@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './Login.css'
-import { Link, useLocation } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
@@ -15,8 +15,9 @@ const Login = () => {
     const GoogleProvider = new GoogleAuthProvider()
     const GithubProvider = new GithubAuthProvider()
 
-
+    const navigate = useNavigate()
     const location = useLocation()
+    const goto = location.state?.from?.pathname
     console.log(location)
 
     const handleLogIn = (event) => {
@@ -34,6 +35,7 @@ const Login = () => {
                 const loggedUser = result.user
                 console.log(loggedUser)
                 form.reset()
+                navigate(goto,{replace: true})
             })
             .catch(error => console.log(error.message))
 

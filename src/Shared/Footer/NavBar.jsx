@@ -31,8 +31,8 @@ const NavBar = () => {
                                 Blog
                             </NavLink>
                         </li>
-                        <li>
-                            {user? <><img className='rounded-full' src={user?.picture}  alt="" /> <button onClick={outToLog}>LogOut</button></> : <NavLink to="/login" className={({isActive})=>isActive? 'active' : 'default'}>
+                        <li className='inline-flex gap-2'>
+                            {user? <><img className='rounded-full h-5 w-5' src={user?.photoURL}  alt="Author" /> <button onClick={outToLog}>LogOut</button></> : <NavLink to="/login" className={({isActive})=>isActive? 'active' : 'default'}>
                                 Login
                             </NavLink>}
                         </li>
