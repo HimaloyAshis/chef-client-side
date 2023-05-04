@@ -1,11 +1,12 @@
 import React from 'react';
 import './RecipesDetails.css'
-import { useLoaderData, useParams } from 'react-router-dom';
-import { FaHeart, FaRegHeart, FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa';
+import { useLoaderData } from 'react-router-dom';
+import {FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa';
 import { useState } from 'react';
+import ThreeRecipes from './ThreeRecipes';
 
 const RecipesDetails = () => {
-    const [favour, setFavour] = useState(false)
+   
     const [like, setLike] = useState(false)
 
     const chefDetails = useLoaderData()
@@ -16,10 +17,6 @@ const RecipesDetails = () => {
         setLike(true)
     }
 
-    const favorite = (id) => {
-        const fav = recipes.recipe.find(rce=>recipes.id === id)
-        setFavour(true)
-    }
 
     return (
         <section>
@@ -45,21 +42,7 @@ const RecipesDetails = () => {
             <section className='chefBackground'>
                 <div className='grid sm:grid-cols-1 lg:grid-cols-3'>
                     {
-                        recipes.map(recipe =>
-                            <div key={recipe.name} className="card w-96 mt-10 m-10 bg-base-100 shadow-xl">
-                                <div className=" card-body">
-                                    <h2 className="card-title text-xl font-bold">{recipe.recipeName}</h2>
-                                    <h2 className='text-xl font-bold'>ingredients</h2>
-                                    {
-                                        recipe.ingredients.map(ingrd => <p>{ingrd[ingrd]}. {ingrd}</p>)
-                                    }
-                                    <p><span className='text-xl'>Cooking method :</span> {recipe.cookingMethod}</p>
-                                    <p><span className='text-xl'>Rating :</span>{recipe.rating}</p>
-                                    <div className="card-actions justify-end">
-                                        <button onClick={()=>favorite(recipe.id)}>{favour ? <FaHeart className='h-8 w-8  text-red-500'></FaHeart> : <FaRegHeart className='h-8 w-8 text-red-500'></FaRegHeart>}</button>
-                                    </div>
-                                </div>
-                            </div>)
+                        recipes.map(recipe => <ThreeRecipes recipe={recipe} key={recipe.name}></ThreeRecipes>  )
                     }
                 </div>
 

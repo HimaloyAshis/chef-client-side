@@ -1,22 +1,16 @@
 import React, { useState } from 'react';
 import './Home.css';
-import { FaInstagram, FaRegThumbsUp, FaThumbsUp } from "react-icons/fa";
-import { Link, useLoaderData } from 'react-router-dom';
+import { FaInstagram} from "react-icons/fa";
+import { useLoaderData } from 'react-router-dom';
+import ChefExplainer from './ChefExplainer';
 
 
 const Home = () => {
 
-    const [like, setLike] = useState(false)
-
 
     const chefs = useLoaderData()
-    const { chefName, chefPicture, id, numberOfRecipes, yearsOfExperience } = chefs
     // console.log(chefs)
-
-
-    const likeButton = ()=>{
-        setLike(true)
-    }
+   
 
     return (
         <section className='bgc'>
@@ -39,24 +33,7 @@ const Home = () => {
 
 
                     {
-                        chefs.map(chef =>
-                            <div key={chef.id} className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-
-                                <img className="rounded-t-lg object-cover flex-grow" src={chef.chefPicture} alt="" />
-
-                                <div className="p-5">
-                                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Name: {chef.chefName}
-                                    </h5>
-                                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Experience: {chef.yearsOfExperience}</p>
-                                    <p>Recipes: {chef.numberOfRecipes}</p>
-
-                                    <div className='flex justify-between items-center'>
-                                        <button className='bton'><Link to={`/recipesDetail/${chef.id}`}>View Recipes</Link></button>
-                                        <button onClick={likeButton}>{like ?  <FaThumbsUp className='h-8 w-8'></FaThumbsUp> : <FaRegThumbsUp className='h-8 w-8'></FaRegThumbsUp>}</button>
-                                    </div>
-                                </div>
-                            </div>
-                        )
+                        chefs.map(chef => <ChefExplainer key={chef.id} chef={chef}></ChefExplainer>  )
                     }
                 </div>
             </section>
