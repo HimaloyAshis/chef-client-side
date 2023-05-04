@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FaCircle, FaHeart, FaRegHeart,} from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './ThreeRecipe.css'
 // import ReactStars from "react-rating-stars-component";
 
 
@@ -18,12 +19,13 @@ const ThreeRecipes = ({ recipe }) => {
 
   
 
-    
+
 
     return (
         <div key={recipe.name} className="card w-96 mt-10 m-10 bg-base-100 shadow-xl">
-            <div className=" card-body">
+            <div className=" crd card-body text-black rounded">
                 <ToastContainer></ToastContainer>
+                <img className='rounded object-cover' src={recipe.image} alt="" />
                 <h2 className="card-title text-xl font-bold">{recipe.recipeName}</h2>
                 <h2 className='text-xl font-bold'>ingredients</h2>
                 {

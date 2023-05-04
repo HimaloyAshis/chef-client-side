@@ -3,7 +3,7 @@ import './RecipesDetails.css'
 import { useLoaderData } from 'react-router-dom';
 import {FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa';
 import { useState } from 'react';
-import ThreeRecipes from './ThreeRecipes';
+import ThreeRecipes from '../ThreeRecipe/ThreeRecipes';
 
 const RecipesDetails = () => {
    
@@ -20,17 +20,17 @@ const RecipesDetails = () => {
 
     return (
         <section>
-            <div className='chefBackground py-10'>
-                <div className="max-w-sm  mx-auto  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div className='chefBackground py-10 '>
+                <div className="max-w-sm  mx-auto chefs text-black border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-                    <img className="rounded-t-lg object-cover flex-grow" src={chefDetails.chefPicture} alt="" />
+                    <img className="rounded-t-lg object-cover flex items-center flex-grow" src={chefDetails.chefPicture} alt="" />
 
                     <div className="p-5">
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Name: {chefDetails.chefName}
                         </h5>
                         <p><span className='text-2xl'>Chef Description</span>: {chefDetails.chefDescription}</p>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Experience: {chefDetails.yearsOfExperience}</p>
-                        <p>Recipes: {chefDetails.numberOfRecipes}</p>
+                        <p className='text-black'>Recipes: {chefDetails.numberOfRecipes}</p>
 
                         <div className='flex justify-between items-center'>
                             <button onClick={likeButton}>{like ? <FaThumbsUp className='h-8 w-8'></FaThumbsUp> : <FaRegThumbsUp className='h-8 w-8'></FaRegThumbsUp>}</button>
