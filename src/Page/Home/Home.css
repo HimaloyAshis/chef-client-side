@@ -1,6 +1,6 @@
 .bg{
     background-size: cover;
-    background-image: url('/image/group\ image\ banner-4.jpg');
+    background-image: url('https://t3.ftcdn.net/jpg/02/68/34/62/240_F_268346293_EAS1EtqLEUGINfRs6SUxI5EA6fNvUOJY.jpg');
     width: 100%;
     height: 700px;
 }
@@ -14,7 +14,7 @@
 }
 
 .bgc{
-    background-color: rgb(89, 82, 136);
+    background-color: rgb(59, 81, 113);
 }
 
 .Tooth{
