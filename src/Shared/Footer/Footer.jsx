@@ -20,7 +20,7 @@ const Footer = () => {
                 <p>China’s central coast, China.</p>
                 <br />
                 <hr />
-                <p>&copy; Right Reserved 2023</p>
+                <p>&copy;All Copyright Reserved 2023</p>
             </div>
             <div>
                 <p>Contact us</p>
