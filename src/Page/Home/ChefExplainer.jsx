@@ -19,17 +19,19 @@ const ChefExplainer = ({ chef }) => {
     }
 
     return (
+
+        // six chef section
+
         <div className="max-w-sm white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             
+            {/* lazy load */}
+
             <LazyLoadImage
                 className="rounded-t-lg object-cover flex-grow" 
                 src={chef.chefPicture} 
                 alt=""
                 
-                
             />
-            
-
 
             <div className="p-5">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Name: {chef.chefName}

@@ -17,11 +17,10 @@ const ThreeRecipes = ({ recipe }) => {
 
     }
 
-  
-
-
-
     return (
+
+        // recipe details
+        
         <div key={recipe.name} className="card w-96 mt-10 m-10 bg-base-100 shadow-xl">
             <div className=" crd card-body text-black rounded">
                 <ToastContainer></ToastContainer>

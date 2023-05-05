@@ -20,6 +20,9 @@ const RecipesDetails = () => {
 
     return (
         <section>
+
+            {/* chef details */}
+            
             <div className='chefBackground py-10 '>
                 <div className="max-w-sm  mx-auto chefs text-black border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
