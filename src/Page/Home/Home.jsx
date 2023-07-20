@@ -30,7 +30,7 @@ const Home = () => {
             </section>
             {/* chef card section */}
             <section className='mt-28'>
-                <h1 className='text-center text-4xl text-amber-500 mb-10' >Here are the best Chefs at Toothsome Space in Shanghai.</h1>
+                <h1 className='text-center text-5xl font-bold text-[#D4E2D4] mb-14' >Here are the best Chefs at Toothsome Space in Shanghai.</h1>
                 <div className='mt-3 grid sm:grid-cols-1 gap-4 lg:grid-cols-3'>
 
 
