@@ -1,6 +1,6 @@
 // import { Rating } from '@smastrom/react-rating';
 import React, { useState } from 'react';
-import { FaCircle, FaHeart, FaRegHeart, FaRegStar, FaStar,} from 'react-icons/fa';
+import { FaCircle, FaHeart, FaRegHeart, FaRegStar, FaStar, } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './ThreeRecipe.css'
@@ -10,11 +10,18 @@ import Rating from 'react-rating';
 
 const ThreeRecipes = ({ recipe }) => {
     const [favour, setFavour] = useState(false)
-    
-   
+
+
     const favorite = () => {
         setFavour(true)
         toast('Your favorite item added')
+
+    }
+
+    const unFavorite = () => {
+        if (favour === true) {
+            setFavour(false)
+        }
 
     }
 
@@ -32,8 +39,8 @@ const ThreeRecipes = ({ recipe }) => {
                     recipe.ingredients.map(ingrd => <p><FaCircle className='text-gray-500 inline-flex'></FaCircle> {ingrd}</p>)
                 }
                 <p><span className='text-xl'>Cooking method :</span> {recipe.cookingMethod}</p>
-                
-                <div  className='h-8 w-8'>
+
+                <div className='h-8 w-8'>
                     <Rating
                         className='flex'
                         placeholderRating={recipe?.rating}
@@ -44,10 +51,16 @@ const ThreeRecipes = ({ recipe }) => {
                     />
                     <p><span className='text-xl'></span>{recipe?.rating}</p>
                 </div>
-                 
+
                 <div className="card-actions justify-end">
-                    <button onClick={favorite} disabled={favour}>{favour ? <FaHeart className='h-8 w-8   text-red-500'></FaHeart> : <FaRegHeart className='h-8 w-8 text-red-500'></FaRegHeart>}</button>
+                    {favour ?
+
+                        <button onClick={unFavorite} > <FaHeart className='h-8 w-8   text-red-500'></FaHeart></button> :
+                        <button onClick={favorite} > <FaRegHeart className='h-8 w-8 text-red-500'></FaRegHeart> </button>
+                    }
                 </div>
+                {/* disabled={favour} */}
+
             </div>
         </div>
     );
