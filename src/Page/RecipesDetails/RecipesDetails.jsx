@@ -19,7 +19,7 @@ const RecipesDetails = () => {
 
 
     return (
-        <section>
+        <section className=''>
 
             {/* chef details */}
             

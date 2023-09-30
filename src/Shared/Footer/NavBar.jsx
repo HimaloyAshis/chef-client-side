@@ -16,9 +16,9 @@ const NavBar = () => {
 
     return (
         <div className=''>
-            <div className="navbar bg-zinc-400">
+            <div className="navbar bg-[#4e706c]">
                 <div className="flex-1">
-                    <h2 className="  text-2xl font-extrabold"><i>Toothsome Space</i></h2>
+                    <h2 className="  default text-2xl font-extrabold"><i>Toothsome Space</i></h2>
                 </div>
                 <div className="">
                     <ul className="flex gap-2 px-1">
@@ -33,7 +33,7 @@ const NavBar = () => {
                             </NavLink>
                         </li>
                         <li className='inline-flex gap-2'>
-                            {user? <><img className='rounded-full h-8 w-8' src={user?.photoURL} title={user?.displayName}  alt="Author" /> <button onClick={outToLog}>LogOut</button></> : <NavLink to="/login" className={({isActive})=>isActive? 'active' : 'default'}>
+                            {user? <><img className='rounded-full h-8 w-8' src={user?.photoURL} title={user?.displayName}  alt="Author" /> <button className='default' onClick={outToLog}>LogOut</button></> : <NavLink to="/login" className={({isActive})=>isActive? 'active' : 'default'}>
                                 Login
                             </NavLink>}
                         </li>
