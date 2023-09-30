@@ -21,6 +21,8 @@ const ThreeRecipes = ({ recipe }) => {
     const unFavorite = () => {
         if (favour === true) {
             setFavour(false)
+            toast('Oops !!')
+
         }
 
     }
