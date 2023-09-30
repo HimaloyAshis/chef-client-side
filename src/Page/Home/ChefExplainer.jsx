@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import './ChefExplainer.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -15,6 +17,7 @@ const ChefExplainer = ({ chef }) => {
 
     const likeButton = () => {
         setLike(true)
+        toast('Thank you for choosing me')
 
     }
 
@@ -23,6 +26,7 @@ const ChefExplainer = ({ chef }) => {
         // six chef section
 
         <div className="max-w-sm white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <ToastContainer></ToastContainer>
             
             {/* lazy load */}
 

@@ -4,6 +4,8 @@ import { useLoaderData } from 'react-router-dom';
 import {FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa';
 import { useState } from 'react';
 import ThreeRecipes from '../ThreeRecipe/ThreeRecipes';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RecipesDetails = () => {
    
@@ -15,6 +17,8 @@ const RecipesDetails = () => {
 
     const likeButton = ()=>{
         setLike(true)
+        toast('Thank you for choosing me')
+
     }
 
 
@@ -24,6 +28,7 @@ const RecipesDetails = () => {
             {/* chef details */}
             
             <div className='chefBackground py-10 '>
+                <ToastContainer></ToastContainer>
                 <div className="max-w-sm  mx-auto chefs text-black border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
                     <img className="rounded-t-lg object-cover flex items-center flex-grow" src={chefDetails.chefPicture} alt="" />

@@ -21,7 +21,7 @@ const Home = () => {
                 <div className='flex justify-center items-center'>
                     <div className='Tooth mx-5'>
                         <h2 className='text-5xl '>Toothsome Space is a most popular restaurant in shanghai. </h2>
-                        <p className='text-2xl'>Have a good day with Toothsome</p>
+                        <p className='text-2xl mt-5'>Have a good day with Toothsome</p>
                     </div>
                     <div className='w-4/5 h-96 rounded'>
                         {/* <img src={chef1} alt="" /> */}
