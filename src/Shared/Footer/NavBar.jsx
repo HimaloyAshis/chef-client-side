@@ -17,6 +17,12 @@ const NavBar = () => {
 
     return (
         <div className=''>
+
+            <div>
+                <span>
+                    
+                </span>
+            </div>            
             <div className="navbar bg-[#4e706c]">
 
                 <div className="flex-1">

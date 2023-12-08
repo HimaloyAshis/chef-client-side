@@ -7,6 +7,9 @@ import NavBar from '../Shared/Footer/NavBar';
 
 
 const Main = () => {
+
+    const noFooter = location.pathname.includes('login') || location.pathname.includes("logout")
+
     return (
         <div>
             <NavBar></NavBar>
