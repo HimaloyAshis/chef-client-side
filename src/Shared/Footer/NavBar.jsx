@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/solid'
 
 
 const NavBar = () => {
@@ -17,6 +18,7 @@ const NavBar = () => {
     return (
         <div className=''>
             <div className="navbar bg-[#4e706c]">
+
                 <div className="flex-1">
                     <h2 className="  default text-2xl font-extrabold"><i>Toothsome Space</i></h2>
                 </div>

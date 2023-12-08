@@ -18,7 +18,7 @@ const Login = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
-    const goto = location.state?.from?.pathname
+    const goto = location.state?.from?.pathname || "/"
     console.log(location)
 
     const handleLogIn = (event) => {
@@ -47,6 +47,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 console.log(user)
+                navigate(goto,{replace: true})
             })
             .catch(error => console.log(error.message))
     }
