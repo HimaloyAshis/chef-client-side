@@ -4,11 +4,11 @@
 
 
 .bton{
-    @apply bg-amber-700  hover:bg-amber-500 hover:text-black duration-500 text-slate-200 p-2 rounded-md 
+    @apply bg-[#016A70]  hover:bg-[#64CCC5] hover:text-black mb-3 duration-500 text-white p-2 rounded-md 
 }
 
 .active{
-    @apply bg-amber-700 hover:bg-amber-500 hover:text-black duration-500 rounded  py-2 px-3
+    @apply bg-[#016A70] hover:bg-[#64CCC5] hover:text-black duration-500 text-white rounded  py-2 px-3
 }
 
 .default{
