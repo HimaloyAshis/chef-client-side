@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import './Register.css'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
 
@@ -19,16 +20,16 @@ const Register = () => {
         const password = form.password.value
         // console.log(name, email, password)
 
-        if(password.length < 6 ){
+        if (password.length < 6) {
             setError('please put at least six password')
-            return 
+            return
         }
 
         // create User
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user
-                console.log(loggedUser)
+
                 updateUser(name, url)
                     .then()
                     .catch(error => console.log(error.message))
@@ -42,6 +43,9 @@ const Register = () => {
 
     return (
         <div className='bg-[#1B4242] '>
+            <Helmet>
+                <title>ToothSome | SignUp</title>
+            </Helmet>
             <div className='w-72 mx-auto py-10 '>
                 <h2 className='text-center text-2xl font-bold mb-3'>Please Register</h2>
                 <form onSubmit={handleRegister}>

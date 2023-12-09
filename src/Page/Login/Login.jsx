@@ -8,7 +8,7 @@ import app from '../../Firebase/firebase.config';
 
 
 const Login = () => {
-    
+
     const auth = getAuth(app)
     const { logIn } = useContext(AuthContext)
     const [error, setError] = useState()
@@ -34,20 +34,20 @@ const Login = () => {
         logIn(email, password)
             .then(result => {
                 const loggedUser = result.user
-                console.log(loggedUser)
-                form.reset()
-                navigate(goto,{replace: true})
-            })
-            .catch(error =>setError(error.message))
 
- }   
+                form.reset()
+                navigate(goto, { replace: true })
+            })
+            .catch(error => setError(error.message))
+
+    }
 
     const GoogleLog = () => {
         signInWithPopup(auth, GoogleProvider)
             .then(result => {
                 const user = result.user
-                console.log(user)
-                navigate(goto,{replace: true})
+
+                navigate(goto, { replace: true })
             })
             .catch(error => console.log(error.message))
     }
@@ -56,17 +56,20 @@ const Login = () => {
         signInWithPopup(auth, GithubProvider)
             .then(result => {
                 const user = result.user
-                console.log(user)
+
             })
             .catch(error => console.log(error.message))
 
     }
 
- 
+
 
     return (
 
         <div className='bg-[#1B4242] py-10 px-10'>
+            <Helmet>
+                <title>ToothSome | Login</title>
+            </Helmet>
             <div className='w-72 mx-auto  '>
                 <h2 className='text-center mt-5 text-2xl font-bold mb-3'>Please Login</h2>
                 <form onSubmit={handleLogIn}>
