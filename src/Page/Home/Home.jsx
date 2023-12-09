@@ -3,6 +3,7 @@ import './Home.css';
 import { FaInstagram} from "react-icons/fa";
 import { useLoaderData } from 'react-router-dom';
 import ChefExplainer from './ChefExplainer';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -16,6 +17,10 @@ const Home = () => {
 
     return (
         <section className='bg-[#1B4242]'>
+
+            <Helmet>
+                <title>ToothSome | Home</title>
+            </Helmet>
             {/* banner section */}
             <section className='bg'>
                 <div className='flex justify-center items-center'>

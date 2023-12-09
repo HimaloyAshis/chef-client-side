@@ -1,21 +1,22 @@
 import React from 'react';
 import './RecipesDetails.css'
 import { useLoaderData } from 'react-router-dom';
-import {FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa';
+import { FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa';
 import { useState } from 'react';
 import ThreeRecipes from '../ThreeRecipe/ThreeRecipes';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 const RecipesDetails = () => {
-   
+
     const [like, setLike] = useState(false)
 
     const chefDetails = useLoaderData()
     const { recipes } = chefDetails
     console.log(chefDetails)
 
-    const likeButton = ()=>{
+    const likeButton = () => {
         setLike(true)
         toast('Thank you for choosing me')
 
@@ -25,8 +26,11 @@ const RecipesDetails = () => {
     return (
         <section className=''>
 
+            <Helmet>
+                <title>ToothSome | Recipes Detail</title>
+            </Helmet>
             {/* chef details */}
-            
+
             <div className='chefBackground py-10 '>
                 <ToastContainer></ToastContainer>
                 <div className="max-w-sm  mx-auto chefs text-black border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -50,7 +54,7 @@ const RecipesDetails = () => {
             <section className='chefBackground'>
                 <div className='grid sm:grid-cols-1 lg:grid-cols-3'>
                     {
-                        recipes.map(recipe => <ThreeRecipes recipe={recipe} key={recipe.name}></ThreeRecipes>  )
+                        recipes.map(recipe => <ThreeRecipes recipe={recipe} key={recipe.name}></ThreeRecipes>)
                     }
                 </div>
 

@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import './Bolg.css'
 import ReactToPrint from 'react-to-print';
 import { Button } from 'flowbite-react';
+import { Helmet } from 'react-helmet';
 
 const Blog = () => {
     const ref = useRef()
@@ -9,6 +10,9 @@ const Blog = () => {
     return (
 
         <section className='px-10 mx-auto qustnBg pb-8'>
+            <Helmet>
+                <title>ToothSome | Blog</title>
+            </Helmet>
 
             <ReactToPrint trigger={() => <Button className='px-2'>Download Pdf</Button>} content={()=>ref.current} />
             <section className='mx-4' ref={ref}>
