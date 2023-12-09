@@ -1,16 +1,16 @@
 .bg{
     background-size: cover;
     background-image: url('https://t3.ftcdn.net/jpg/02/68/34/62/240_F_268346293_EAS1EtqLEUGINfRs6SUxI5EA6fNvUOJY.jpg');
-    width: 100%;
-    height: 700px;
+    /* width: 100%; */
+    height: 100vh;
 }
 
 .social{
     background-size: cover;
     background-image: url('/image/DV01.jpg');
-    width: 100%;
+    /* width: 100%; */
     /* margin: auto; */
-    height: 700px;
+    height: 100vh;
 }
 
 .bgc{
