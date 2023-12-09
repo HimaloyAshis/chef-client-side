@@ -5,6 +5,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../Firebase/firebase.config';
+import { Helmet } from 'react-helmet';
 
 
 const Login = () => {
