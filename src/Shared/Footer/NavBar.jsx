@@ -31,10 +31,10 @@ const NavBar = () => {
             <div className={` py-4 bg-[#4e706c] z-10 md:flex  absolute md:static  ${Open ? "top-10" : "-top-56"} rounded-md duration-500 `}>
 
                 <div className="flex-1">
-                    <h2 className="  default text-2xl font-extrabold"><i>Toothsome Space</i></h2>
+                    <h2 className="  default text-2xl font-extrabold">Toothsome Space</h2>
                 </div>
                 <div className="">
-                    <ul className="md:flex gap-2 sm:px-1">
+                    <ul className="md:flex gap-2 mb-2 :px-1">
                         <li >
                             <NavLink to={`/`} className={({ isActive }) => isActive ? 'active' : 'default'} >
                                 Home
