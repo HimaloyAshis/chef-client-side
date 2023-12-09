@@ -66,7 +66,7 @@ const Login = () => {
 
     return (
 
-        <div className='log py-10 px-10'>
+        <div className='bg-[#1B4242] py-10 px-10'>
             <div className='w-72 mx-auto  '>
                 <h2 className='text-center mt-5 text-2xl font-bold mb-3'>Please Login</h2>
                 <form onSubmit={handleLogIn}>

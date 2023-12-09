@@ -15,7 +15,7 @@ const Home = () => {
    
 
     return (
-        <section className='bgc'>
+        <section className='bg-[#1B4242]'>
             {/* banner section */}
             <section className='bg'>
                 <div className='flex justify-center items-center'>
