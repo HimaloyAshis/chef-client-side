@@ -9,13 +9,13 @@ const Blog = () => {
 
     return (
 
-        <section className='px-10 mx-auto qustnBg pb-8'>
+        <section className='px-10 mx-auto bg-[#1B4242] pb-8'>
             <Helmet>
                 <title>ToothSome | Blog</title>
             </Helmet>
 
             <ReactToPrint trigger={() => <Button className='px-2'>Download Pdf</Button>} content={()=>ref.current} />
-            <section className='mx-4' ref={ref}>
+            <section className='mx-4 text-white' ref={ref}>
                 <h2 className='text-3xl text-center py-8'>Question and Answer area</h2>
 
                 <div className='mt-4'>
